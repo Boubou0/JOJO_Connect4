@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel = "icon" href = "./img/incon.jpg";
+    type = "image/x-icon">
+  </head>
+  <body>
+    <div id="board">
+      <h1>JOJO's Connect 4</h1>
+    </div>
+    <div id="game">
+      <div class="menu">
+        <div class="controls">
+          <ul>
+              <li><input type="checkbox" name="AI" id="ai_check" />
+                <label for="ai_check">Active AI</label></li>
+              <h3>Starting player</h3>
+            <li>
+                <div id="form" >
+                  <input type="radio" id="J1" name="choix" value="1"/>
+                      <label for="J1">Player 1</label>
+                  <input type="radio" id="J2" name="choix" value="2" />
+                      <label for="J2">Player 2</label>
+                </div>
+            </li>
+            <li>
+              <select name="difficulte" id="difficulte-select">
+                <option value="1">Phantom Blood</option>
+                <option value="2">Battle Tendency</option>
+                <option value="3">Stardust Crusaders</option>
+                <option value="4">Diamond Is Unbreakable</option>
+                <option value="5">Golden Wind</option>
+                <option value="6">Stone Ocean</option>
+                <option value="7">Steel Ball Run</option>
+                <option value="7">JoJolion</option>
+              </select>
+            </li>
+              <li>
+                <div>
+                    <input type="button" class="button" id="btnStart" value="Jouer !"/>
+                </div>
+              </li>
+              <li><input type="checkbox" name="noAnimation" id="no_animation" />
+                <label for="no_animation">No Animation</label></li>
+              </li>
+          </ul>
+        </div> 
+      </div>
+      <div id="connect4"></div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <div id="end"></div>
+      </div>
+  </div>
+  <object type="audio/mpeg" width="0" height="0" data="" id="play">
+    <param id="name" value="" />
+    <param name="autostart" value="true" />
+    <param name="loop" value="false" />
+    </object>
+  </body>
+  <script type="module" src="./js/controlers/controler.js"></script>
+  <script src="./js/libs/jquery.js"></script>
+  <script type="module" src="./index.js"></script>
+</html>

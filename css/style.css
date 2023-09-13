@@ -1,0 +1,243 @@
+body{
+  /*background-color: #E5E6ED;*/
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#screen{
+  background-color: #E5E6ED;
+}
+#board{
+  color: #FFC000;
+  font-size: 3em;
+  margin: 0;
+  -webkit-text-stroke: 2px purple;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: -1%;
+  
+}
+#game{
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  width: 300px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  position: absolute;
+  opacity: 1;
+  z-index: -1;
+}
+
+label {
+  position: relative;
+  margin-right: 1em;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+  z-index: 2;
+}
+label:before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px solid white;
+  border-radius: 0.25em;
+  z-index: 2;
+}
+
+input[type=radio] + label::before {
+  border-radius: 1em;
+}
+
+/* Checked */
+input[type=checkbox]:checked + label,
+input[type=radio]:checked + label {
+  padding-left: 1em;
+  color: black;
+}
+input[type=checkbox]:checked + label:before,
+input[type=radio]:checked + label:before {
+    z-index:  -1;
+  top: 0;
+  width: 100%;
+  height: 2em;
+  background-color: white;
+  color:  black;
+  
+}
+
+/* Transition */
+label,
+label::before {
+  transition: 0.25s all ease;
+}
+
+.button {
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10%;
+}
+
+.button:hover{
+    background-color: #DCAFEB;
+}
+
+.button:focus{
+    background-color: #DCAFEB;
+    border: solid 2px black;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.menu{
+    background-color: darkgrey;
+    width: 300px;
+    height: 305px;
+    margin-left: 2%;
+    padding: 5px;
+    border-radius: 5%;
+    box-shadow: 0 0 5px 5px gray;
+}
+.col {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  margin: 1%;
+  opacity: 100%;
+}
+.col.empty {
+  cursor: pointer;
+}
+#connect4{
+  display: inline-block;
+  text-align: center;
+  width: 25%;
+  background-color: #1578FF;
+  opacity: 95%;
+  margin-left: 12%; 
+  min-width: 640px;
+  border-radius: 8%;
+  padding: 20px 0;
+  margin-top: 1%;
+}
+#board h1{
+  text-align: center;
+}
+.J1{
+  background-image: url("../img/tokenJ1V2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.J2{
+  background-image: url("../img/tokenJ2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  z-index:  12;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+#difficulte-select{
+  margin-top: 20px;
+}
+
+/*select*/
+:root {
+  --radius: 2px;
+  --baseFg: dimgray;
+  --baseBg: white;
+  --accentFg: purple;
+  --accentBg: #FFC000;
+}
+
+.theme-construction {
+  --radius: 0;
+  --baseFg: white;
+  --baseBg: black;
+  --accentFg: black;
+  --accentBg: orange;
+}
+
+select {
+  font: 400 12px/1.3 sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--baseFg);
+  border: 1px solid var(--baseFg);
+  line-height: 1;
+  outline: 0;
+  padding: 0.65em 2.5em 0.55em 0.75em;
+  border-radius: var(--radius);
+  background-color: var(--baseBg);
+  background-image: linear-gradient(var(--baseFg), var(--baseFg)),
+    linear-gradient(-135deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(-225deg, transparent 50%, var(--accentBg) 50%),
+    linear-gradient(var(--accentBg) 42%, var(--accentFg) 42%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 1px 100%, 20px 22px, 20px 22px, 20px 100%;
+  background-position: right 20px center, right bottom, right bottom, right bottom;   
+}
